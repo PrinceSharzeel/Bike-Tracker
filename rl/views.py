@@ -1,10 +1,9 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import *
 from .forms import *
 from django.contrib import messages
-
-import csv,os
+from .models import Vehicles
+import csv
 
 def upload(request):
     if request.method == 'POST':
