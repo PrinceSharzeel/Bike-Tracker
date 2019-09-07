@@ -9,7 +9,7 @@ docutils==0.13.1
 geodjango-tigerleaflet==0.2.1
 geodjango-tigerline==1.1.0
 geodjango-timezones==1.0
-gunicorn==19.7.1
+gunicorn==19.9.0
 packaging==16.8
 python-dateutil==2.6.1
 pytz==2017.3
