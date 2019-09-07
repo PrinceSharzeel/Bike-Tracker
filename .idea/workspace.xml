@@ -2,37 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="932435ee-4a90-4545-8f08-0a49d7dd016b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/animate.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/bootstrap-select.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/demo.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/dropzone.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/easy-responsive-tabs.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/flexslider.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/jquery-ui1.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/jquery.uls.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/jquery.uls.grid.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/jquery.uls.lcd.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/paper-dashboard.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/themify-icons.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/bootstrap-checkbox-radio.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/bootstrap-notify.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/bootstrap-select.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery-1.10.2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery-ui.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.ui.widget.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.uls.core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.uls.data.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.uls.data.utils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.uls.languagefilter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.uls.lcd.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.uls.regionfilter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/paper-dashboard.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/script.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
