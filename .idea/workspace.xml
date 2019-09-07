@@ -2,6 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="932435ee-4a90-4545-8f08-0a49d7dd016b" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper-dashboard.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/_alerts.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/_buttons.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/_cards.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/_chartist.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/_checkbox-radio.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/_dropdown.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/_footers.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/_inputs.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/_misc.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/_mixins.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/_navbars.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/_responsive.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/_sidebar-and-main-panel.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/_tables.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/_typography.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/_variables.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/mixins/_buttons.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/mixins/_cards.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/mixins/_chartist.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/mixins/_icons.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/mixins/_inputs.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/mixins/_labels.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/mixins/_navbars.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/mixins/_sidebar.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/mixins/_tabs.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/mixins/_transparency.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/sass/paper/mixins/_vendor-prefixes.scss" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
