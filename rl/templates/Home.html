@@ -1,12 +1,12 @@
- {% load staticfiles %}
- <!DOCTYPE html>
+{% load staticfiles %}
+<!DOCTYPE html>
 <head>
 
-	<title>Vogo</title>
+    <title>Vogo</title>
 
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Compiled and minified CSS -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- Compiled and minified JavaScript -->
@@ -22,115 +22,110 @@ background-color:#26A69A;
 a{
 margin-left:20px;
 }
-</style>
+
+    </style>
 
 
 </head>
 
- <body>
+<body>
 
- <nav>
+<nav>
     <div class="nav-wrapper">
-      <a href="/home" class="brand-logo"> Vogo</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/map">Map</a></li>
-      </ul>
+        <a href="/home" class="brand-logo"> Vogo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/map">Map</a></li>
+        </ul>
     </div>
-  </nav>
-
+</nav>
 
 
 <div class="container" style="left:10px;;position:absolute;">
-     <div class="row">
+    <div class="row">
 
-              <table class="sresponsive-table">
-                        <thead>
-                          <tr>
-                              <th>Registration Number</th>
-                              <th>Ignition Status</th>
-                              <th>Latitude & Longitude</th>
-                              <th>Fuel Level</th>
-                              <th>Timestamp</th>
-                          </tr>
-                        </thead>
+        <table class="sresponsive-table">
+            <thead>
+            <tr>
+                <th>Registration Number</th>
+                <th>Ignition Status</th>
+                <th>Latitude & Longitude</th>
+                <th>Fuel Level</th>
+                <th>Timestamp</th>
+            </tr>
+            </thead>
 
-                        <tbody>
-                          <tr>
-                            <td>AB12CD1234</td>
-                               <td>True/False</td>
-                               <td>12.9108T77.641325</td>
-                               <td>0 to 100</td>
-                               <td>2018-12-25 09:27:53</td>
+            <tbody>
+            <tr>
+                <td>AB12CD1234</td>
+                <td>True/False</td>
+                <td>12.9108T77.641325</td>
+                <td>0 to 100</td>
+                <td>2018-12-25 09:27:53</td>
 
-                          </tr>
-                        </tbody>
-                </table>
-          </div>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 
- <div class="row">
+    <div class="row">
 
-      <div class="col s3">
-          <div class="row">
-                      <form method="POST" enctype="multipart/form-data" action="/home" class="post-form">{% csrf_token %}
-                            {{ form.as_p }}
+        <div class="col s3">
+            <div class="row">
+                <form method="POST" enctype="multipart/form-data" action="/home" class="post-form">{% csrf_token %}
+                    {{ form.as_p }}
 
-                            <button type="submit" class="save btn btn-default">Submit</button>
-                        </form>
-                      {% if messages %}
-                           <script>
+                    <button type="submit" class="save btn btn-default">Submit</button>
+                </form>
+                {% if messages %}
+                <script>
                             {% for message in messages %}
                                 M.toast({html: '{{message}}'})
                             {% endfor %}
-                           </script>
-                        {% endif %}
-          </div>
+
+                </script>
+                {% endif %}
+            </div>
 
 
-
-      </div>
-      <div class="col s9">
-           <div class="card" style="width: 900px; height: 500px;">
-            {% if stp %}
+        </div>
+        <div class="col s9">
+            <div class="card" style="width: 900px; height: 500px;">
+                {% if stp %}
                 <table class="striped responsive-table">
-                        <thead>
-                          <tr>
-                              <th>Registration Number</th>
-                              <th>Ignition Status</th>
-                              <th>Fuel Level</th>
-                              <th>Timestamp</th>
-                          </tr>
-                        </thead>
+                    <thead>
+                    <tr>
+                        <th>Registration Number</th>
+                        <th>Ignition Status</th>
+                        <th>Fuel Level</th>
+                        <th>Timestamp</th>
+                    </tr>
+                    </thead>
 
-                        <tbody>
-                        {% for elem in stp %}
-                          <tr>
-                            <td>{{elem.reg_num}}</td>
-                              {% ifequal elem.ign_status '0' %}
-                                <td bgcolor="#EF9A9A">{{elem.ign_status}}</td>
-                              {% else %}
-                                 <td bgcolor="#A5D6A7">{{elem.ign_status}}</td>
-                              {% endifequal %}
-                            <td>{{elem.fuel_lvl}}</td>
-                              <td>{{elem.tmstmp}}</td>
-                          </tr>
-                        {% endfor %}
-                        </tbody>
+                    <tbody>
+                    {% for elem in stp %}
+                    <tr>
+                        <td>{{elem.reg_num}}</td>
+                        {% ifequal elem.ign_status '0' %}
+                        <td bgcolor="#EF9A9A">{{elem.ign_status}}</td>
+                        {% else %}
+                        <td bgcolor="#A5D6A7">{{elem.ign_status}}</td>
+                        {% endifequal %}
+                        <td>{{elem.fuel_lvl}}</td>
+                        <td>{{elem.tmstmp}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
                 </table>
-             {% else %}
-               <h3>No Records Found</h3>
-            {% endif %}
+                {% else %}
+                <h3>No Records Found</h3>
+                {% endif %}
 
             </div>
-       </div>
+        </div>
     </div>
 
 
-
-
 </div>
-
-
-
 
 
 </body>
