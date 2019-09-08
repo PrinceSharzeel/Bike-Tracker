@@ -23,7 +23,7 @@ def home(request):
                 if csv_file.name.split(".")[1]!='csv':
                     messages.error(request,"Only CSV files allowed")
                     return HttpResponseRedirect("/home")
-                file_reader =csv.reader(csv_file,delimiter='\n')
+                file_reader =csv.reader(csv_file,delimiter=',')
 
                 try:
                     for fields in file_reader:
