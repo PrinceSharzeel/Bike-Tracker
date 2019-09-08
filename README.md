@@ -2,7 +2,7 @@
 
 A django application to track the location of bikes and its status. 
 
-## Map Library
+## Map Library :round_pushpin:
    [Leaflet.js](https://leafletjs.com/)
 
 ## [Heroku](https://vogotracker.herokuapp.com/home)
@@ -20,7 +20,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-## CSV Data format
+## CSV Data format :bookmark_tabs:
 
 Reg. No.  |Location          |Ignition Status|   Fuel Level | Timestamp|
 ------------- | ------------- |------------- | ------------- | ------------- |
