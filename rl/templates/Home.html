@@ -62,7 +62,7 @@ margin-left:20px;
           {% if messages %}
                <script>
                 {% for message in messages %}
-                    alert("{{ message }}");
+                    M.toast({html: '{{message}}'})
                 {% endfor %}
                </script>
             {% endif %}

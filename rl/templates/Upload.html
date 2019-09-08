@@ -93,11 +93,6 @@ background-color:#FECD35;
 
     <div class="col-md-2 col-md-offset-1 card" style="margin: 0 auto; ">
 
-
-<form method="POST" enctype="multipart/form-data" action="/upload" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Get</button>
-    </form>
  {% for d in stp %}
 
        <div class="col s6 m7">
