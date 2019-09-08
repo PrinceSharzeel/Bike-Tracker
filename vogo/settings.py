@@ -31,7 +31,7 @@ SECRET_KEY = '4wz#e0y@kkz#i8diaq47c348bd*7f&z+!m78tf7vmjcx2imx2t'
 DEBUG = True
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
