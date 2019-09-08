@@ -24,7 +24,7 @@ python manage.py runserver
 
 Reg. No.  |Location          |Ignition Status|   Fuel Level | Timestamp|
 ------------- | ------------- |------------- | ------------- | ------------- |
-String  | <lat>T<long> |    True/False           |   0-100 |2018-12-25 09:27:53
+String  | "lat"T"long" |    True/False           |   0-100 |2018-12-25 09:27:53
 
 
 ### Map
