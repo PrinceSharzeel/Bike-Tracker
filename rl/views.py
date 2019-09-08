@@ -23,45 +23,41 @@ def home(request):
                 if csv_file.name.split(".")[1]!='csv':
                     messages.error(request,"Only CSV files allowed")
                     return HttpResponseRedirect("/home")
-                file_reader =csv.reader(csv_file,delimiter=',')
+                decoded_file = csv_file.read().decode('utf-8').splitlines()
+                file_reader = csv.DictReader(decoded_file)
+                for fields in file_reader:
+                    #fields = str(entry[0]).split(',')
+                    reg_num=str(fields[0]).upper()
+                    ign_status = fields[2]
+                    fuel_lvl = fields[3]
+                    lat = str(fields[1]).split("T")[0]
+                    lont = str(fields[1]).split("T")[1]
+                    tmstmp = fields[4]
+                    if validate_vehicle(reg_num)==False:
+                        messages.error(request, "Invalid Vehicle Number")
+                        return HttpResponseRedirect("/home")
 
-                try:
-                    for fields in file_reader:
-                        #fields = str(entry[0]).split(',')
-                        reg_num=str(fields[0]).upper()
-                        ign_status = fields[2]
-                        fuel_lvl = fields[3]
-                        lat = str(fields[1]).split("T")[0]
-                        lont = str(fields[1]).split("T")[1]
-                        tmstmp = fields[4]
-                        if validate_vehicle(reg_num)==False:
-                            messages.error(request, "Invalid Vehicle Number")
-                            return HttpResponseRedirect("/home")
 
+                    db_obj = Vehicles()
+                    db_obj.reg_num = reg_num
+                    db_obj.fuel_lvl = fuel_lvl
 
-                        db_obj = Vehicles()
-                        db_obj.reg_num = reg_num
-                        db_obj.fuel_lvl = fuel_lvl
+                    false_list = ["FALSE","false","False","0"]
 
-                        false_list = ["FALSE","false","False","0"]
+                    if ign_status in false_list:
+                        db_obj.ign_status =False
 
-                        if ign_status in false_list:
-                            db_obj.ign_status =False
+                    else:
+                        db_obj.ign_status =True
 
-                        else:
-                            db_obj.ign_status =True
+                    db_obj.tmstmp=tmstmp
+                    db_obj.lat=lat
+                    db_obj.lont=lont
+                    print(db_obj)
+                    db_obj.save()
 
-                        db_obj.tmstmp=tmstmp
-                        db_obj.lat=lat
-                        db_obj.lont=lont
-                        print(db_obj)
-                        db_obj.save()
-
-                    messages.success(request, "Uploaded successfully")
-                    return HttpResponseRedirect('/home')
-                except Exception as e:
-                    messages.error(request, e)
-                    return HttpResponseRedirect('/home')
+                messages.success(request, "Uploaded successfully")
+                return HttpResponseRedirect('/home')
 
         else:
             messages.error(request, "Invalid File")
