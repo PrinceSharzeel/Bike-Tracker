@@ -23,18 +23,23 @@ def home(request):
                 if csv_file.name.split(".")[1]!='csv':
                     messages.error(request,"Only CSV")
                     return HttpResponseRedirect("/home")
-                db_obj=Vehicles()
-                file_reader =csv.reader(csv_file,delimiter=',')
+                file_reader =csv.reader(csv_file,delimiter='\n')
 
                 try:
-                    for fields in file_reader:
-                        reg_num=fields[0]
+                    for entry in file_reader:
+                        fields = str(entry[0]).split(',')
+                        reg_num=str(fields[0]).upper()
                         ign_status = fields[2]
                         fuel_lvl = fields[3]
                         lat = str(fields[1]).split("T")[0]
                         lont = str(fields[1]).split("T")[1]
                         tmstmp = fields[4]
+                        if validate_vehicle(reg_num)==False:
+                            messages.error(request, "Invalid Vehicle Number")
+                            return HttpResponseRedirect("/home")
 
+
+                        db_obj = Vehicles()
                         db_obj.reg_num = reg_num
                         db_obj.fuel_lvl = fuel_lvl
 
@@ -49,6 +54,7 @@ def home(request):
                         db_obj.tmstmp=tmstmp
                         db_obj.lat=lat
                         db_obj.lont=lont
+                        print(db_obj)
                         db_obj.save()
 
                     messages.success(request, "Uploaded successfully")
@@ -68,24 +74,15 @@ def home(request):
 
 
 
-def validate_entries(reg_num,lat,lont):
+def validate_vehicle(reg_num):
+    pattern = '^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}$'
+    result = re.match(pattern, reg_num)
 
-    reg_pattern = re.compile('^[A-Z]{2}[ -][0-9]{1,2}(?: [A-Z])?(?: [A-Z]*)? [0-9]{4}$')
+    print(result)
+    if result:
+       return True
 
-    lattitude_patrn = re.compile("^(\\+|-)?(?:90(?:(?:\\.0{1,6})?)|(?:[0-9]|[1-8][0-9])(?:(?:\\.[0-9]{1,6})?))$")
-    longitude_patrn = re.compile("^(\\+|-)?(?:180(?:(?:\\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\\.[0-9]{1,6})?))$")
-
-    if reg_pattern.match(reg_num)==False:
-        print("reg_failed")
-        return False
-    if lattitude_patrn.match(lat)==False:
-        print("lat_failed")
-        return False
-    if longitude_patrn.match(lont)==False:
-        print("lon_failed")
-        return False
-
-    return True
+    return False
 
 
 
