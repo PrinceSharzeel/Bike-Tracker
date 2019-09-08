@@ -85,7 +85,7 @@ margin-left:20px;
                         {% for elem in stp %}
                           <tr>
                             <td>{{elem.reg_num}}</td>
-                              {% ifequal elem.ign_status 'FALSE' %}
+                              {% ifequal elem.ign_status '0' %}
                                 <td bgcolor="#EF9A9A">{{elem.ign_status}}</td>
                               {% else %}
                                  <td bgcolor="#A5D6A7">{{elem.ign_status}}</td>

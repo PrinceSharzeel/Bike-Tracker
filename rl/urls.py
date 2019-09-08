@@ -3,7 +3,7 @@ from . import views
 app_name='rl'
 urlpatterns = [
 
-    url(r'^upload', views.upload),
+    url(r'^map', views.Vehicle_Map),
     url(r'^home', views.home),
 
 ]

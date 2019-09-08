@@ -55,32 +55,10 @@ background-color:#FECD35;
 
 
 </head>
-<!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-light default-color">
 
-    <!-- Navbar brand -->
     <b style="color:white;">Vogo</b>
 
-    <!-- Collapse button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="basicExampleNav">
-
-        <!-- Links -->
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-
-            </li>
-
-
-        </ul>
-
-    </div>
-    <!-- Collapsible content -->
 
 </nav>
 <!--/.Navbar-->
@@ -93,12 +71,12 @@ background-color:#FECD35;
 
     <div class="col-md-2 col-md-offset-1 card" style="margin: 0 auto; ">
 
- {% for d in stp %}
+ {% for vehicle in vehicles_lst %}
 
        <div class="col s6 m7">
     <div class="card horizontal">
         <div class="card-content" style="margin: 0 auto; ">
-            <p ><a  target="_blank">{{d.reg_num}}</a></p>
+            <p ><a  target="_blank">{{vehicle.reg_num}}</a></p>
         </div>
     </div>
   </div>
@@ -201,7 +179,7 @@ var firefoxIcon = L.icon({
 
 var markers = L.markerClusterGroup();
 var marker=null;
-{% for i in stp %}
+{% for i in vehicles_lst %}
 	var d={{i.fuel_lvl}}
 	    var customPopup = "Fuel : {{i.fuel_lvl}}<br/>";
            var ign_stat="{{i.ign_status}}"

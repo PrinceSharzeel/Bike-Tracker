@@ -9,7 +9,7 @@ class Vehicles(models.Model):
     lont = models.CharField(max_length=10, blank=False)
     ign_status = models.BooleanField(max_length=8, blank=False,default=False)
     fuel_lvl = models.IntegerField( blank=False)
-    tmstmp=models.DateTimeField(max_length=20,blank=False)
+    tmstmp=models.CharField(max_length=20,blank=False)
 
     objects = models.Manager()
 
