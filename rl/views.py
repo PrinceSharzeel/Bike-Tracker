@@ -35,7 +35,7 @@ def home(request):
                         reg_num=fields[0]
                         ign_status = fields[2]
                         fuel_lvl = fields[3]
-                        lat = str(fields[1]).split("T")[1]
+                        lat = str(fields[0]).split("T")[1]
                         lont = str(fields[1]).split("T")[1]
                         tmstmp = fields[4]
 
