@@ -25,17 +25,13 @@ def home(request):
                     return HttpResponseRedirect("/home")
                 db_obj=Vehicles()
                 file_reader =csv.reader(csv_file,delimiter=',')
-                row=1
 
                 try:
                     for fields in file_reader:
-                        if row==1:
-                            row=2
-                            continue
                         reg_num=fields[0]
                         ign_status = fields[2]
                         fuel_lvl = fields[3]
-                        lat = str(fields[0]).split("T")[1]
+                        lat = str(fields[1]).split("T")[0]
                         lont = str(fields[1]).split("T")[1]
                         tmstmp = fields[4]
 
@@ -58,7 +54,7 @@ def home(request):
                     messages.success(request, "Uploaded successfully")
                     return HttpResponseRedirect('/home')
                 except:
-                    messages.error(request, "Invalid File Data")
+                    messages.error(request, "Invalid File Datas")
                     return HttpResponseRedirect('/home')
 
         else:

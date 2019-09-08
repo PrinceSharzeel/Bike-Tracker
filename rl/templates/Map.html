@@ -182,12 +182,12 @@ var marker=null;
 {% for i in vehicles_lst %}
 	var d={{i.fuel_lvl}}
 	    var customPopup = "Fuel : {{i.fuel_lvl}}<br/>";
-           var ign_stat="{{i.ign_status}}"
-          if (ign_stat=="TRUE")
+          {% ifequal i.ign_status '1' %}
            var iconurl="{% static "/images/green.png" %}"
-           else
+           console.log("{{i.ign_status}}")
+           {% else %}
            var iconurl="{% static "/images/red.png" %}"
-
+          {% endifequal %}
 
           var customIcon = L.icon({
                                     iconUrl:iconurl,
@@ -196,7 +196,7 @@ var marker=null;
 
 			marker = L.marker([{{i.lat}},{{i.lont}}], {icon: customIcon}).addTo(mymap).bindPopup(customPopup,customOptions);
 
-
+            console.log("{{i.lat}},{{i.lont}}")
 			markers.addLayer(marker);
 		{% endfor %}
 
