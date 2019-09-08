@@ -59,8 +59,8 @@ def home(request):
 
                     messages.success(request, "Uploaded successfully")
                     return HttpResponseRedirect('/home')
-                except:
-                    messages.error(request, "Invalid File Datas")
+                except Exception as e:
+                    messages.error(request, e)
                     return HttpResponseRedirect('/home')
 
         else:
