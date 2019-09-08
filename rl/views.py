@@ -21,13 +21,13 @@ def home(request):
             if 'vcsv' in request.FILES:
                 csv_file=request.FILES['vcsv']
                 if csv_file.name.split(".")[1]!='csv':
-                    messages.error(request,"Only CSV")
+                    messages.error(request,"Only CSV files allowed")
                     return HttpResponseRedirect("/home")
                 file_reader =csv.reader(csv_file,delimiter='\n')
 
                 try:
-                    for entry in file_reader:
-                        fields = str(entry[0]).split(',')
+                    for fields in file_reader:
+                        #fields = str(entry[0]).split(',')
                         reg_num=str(fields[0]).upper()
                         ign_status = fields[2]
                         fuel_lvl = fields[3]
