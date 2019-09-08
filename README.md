@@ -1,11 +1,12 @@
 # Introduction
 
-A django application to track the location of bikes and its status.
+A django application to track the location of bikes and its status. 
 
 ## Map Library
    [Leaflet.js](https://leafletjs.com/)
 
-
+## [Heroku](https://vogotracker.herokuapp.com/home)
+ 
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
