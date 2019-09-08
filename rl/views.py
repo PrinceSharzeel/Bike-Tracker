@@ -7,7 +7,6 @@ import csv,datetime,time,re
 
 def Vehicle_Map(request):
     db_obj = Vehicles.objects.all()
-    print(db_obj)
     return render(request, 'Map.html', {'vehicles_lst': db_obj})
 
 
@@ -27,13 +26,12 @@ def home(request):
                 file_reader = csv.reader(decoded_file)
                 for fields in file_reader:
                     #fields = str(entry[0]).split(',')
-                    print(fields)
                     reg_num=str(fields[0]).upper()
                     ign_status = fields[2]
                     fuel_lvl = fields[3]
                     lat = str(fields[1]).split("T")[0]
                     lont = str(fields[1]).split("T")[1]
-                    tmstmp = fields[4]
+                    tmstmp = str(fields[4])
                     if validate_vehicle(reg_num)==False:
                         messages.error(request, "Invalid Vehicle Number")
                         return HttpResponseRedirect("/home")
@@ -54,7 +52,7 @@ def home(request):
                     db_obj.tmstmp=tmstmp
                     db_obj.lat=lat
                     db_obj.lont=lont
-                    print(db_obj)
+                    print(db_obj.tmstmp,tmstmp)
                     db_obj.save()
 
                 messages.success(request, "Uploaded successfully")
@@ -74,8 +72,6 @@ def home(request):
 def validate_vehicle(reg_num):
     pattern = '^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}$'
     result = re.match(pattern, reg_num)
-
-    print(result)
     if result:
        return True
 
