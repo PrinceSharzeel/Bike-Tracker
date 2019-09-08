@@ -24,9 +24,10 @@ def home(request):
                     messages.error(request,"Only CSV files allowed")
                     return HttpResponseRedirect("/home")
                 decoded_file = csv_file.read().decode('utf-8').splitlines()
-                file_reader = csv.DictReader(decoded_file)
+                file_reader = csv.reader(decoded_file)
                 for fields in file_reader:
                     #fields = str(entry[0]).split(',')
+                    print(fields)
                     reg_num=str(fields[0]).upper()
                     ign_status = fields[2]
                     fuel_lvl = fields[3]
