@@ -1,6 +1,5 @@
  {% load staticfiles %}
  <!DOCTYPE html>
-<div>
 <head>
 
 	<title>Vogo</title>
@@ -16,17 +15,6 @@
 
     <style>
 
-#mapid {position:absolute;top:0;left:0;}
-.overlap {position:relative}
-  .navbar {
-    margin-bottom: 20px;
-}
-
-.custom .leaflet-popup-tip,
-.custom .leaflet-popup-content-wrapper {
-    background: #2BBBAD;
-    color: #fff;
-}
 nav{
 background-color:#26A69A;
 }
@@ -38,7 +26,9 @@ margin-left:20px;
 
 
 </head>
-<!--Navbar-->
+
+ <body>
+
  <nav>
     <div class="nav-wrapper">
       <a href="/home" class="brand-logo"> Vogo</a>
@@ -50,22 +40,52 @@ margin-left:20px;
 
 
 
-<div class="container" >
+<div class="container" style="left:10px;;position:absolute;">
+     <div class="row">
+
+              <table class="sresponsive-table">
+                        <thead>
+                          <tr>
+                              <th>Registration Number</th>
+                              <th>Ignition Status</th>
+                              <th>Latitude & Longitude</th>
+                              <th>Fuel Level</th>
+                              <th>Timestamp</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr>
+                            <td>AB12CD1234</td>
+                               <td>True/False</td>
+                               <td>12.9108T77.641325</td>
+                               <td>0 to 100</td>
+                               <td>2018-12-25 09:27:53</td>
+
+                          </tr>
+                        </tbody>
+                </table>
+          </div>
+
  <div class="row">
 
       <div class="col s3">
-          <form method="POST" enctype="multipart/form-data" action="/home" class="post-form">{% csrf_token %}
-                {{ form.as_p }}
+          <div class="row">
+                      <form method="POST" enctype="multipart/form-data" action="/home" class="post-form">{% csrf_token %}
+                            {{ form.as_p }}
 
-                <button type="submit" class="save btn btn-default">Submit</button>
-            </form>
-          {% if messages %}
-               <script>
-                {% for message in messages %}
-                    M.toast({html: '{{message}}'})
-                {% endfor %}
-               </script>
-            {% endif %}
+                            <button type="submit" class="save btn btn-default">Submit</button>
+                        </form>
+                      {% if messages %}
+                           <script>
+                            {% for message in messages %}
+                                M.toast({html: '{{message}}'})
+                            {% endfor %}
+                           </script>
+                        {% endif %}
+          </div>
+
+
 
       </div>
       <div class="col s9">
@@ -105,10 +125,11 @@ margin-left:20px;
     </div>
 
 
-</div>
 
 
 </div>
+
+
 
 
 
