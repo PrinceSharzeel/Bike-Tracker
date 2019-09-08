@@ -160,7 +160,6 @@ var marker=null;
 	    var customPopup = "Fuel : {{i.fuel_lvl}}<br/>";
           {% ifequal i.ign_status '1' %}
            var iconurl="{% static "/images/green.png" %}"
-           console.log("{{i.ign_status}}")
            {% else %}
            var iconurl="{% static "/images/red.png" %}"
           {% endifequal %}
